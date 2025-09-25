@@ -1,0 +1,194 @@
+/* Container geral */
+div#GerenciarUserDiv {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+
+}
+
+/* Título */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Campo de busca */
+input#busca {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  width: 100%;
+  max-width: 250px;
+  transition: 0.2s;
+}
+
+input#busca:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+}
+
+/* Formulário de adição */
+form#GerenciarUserDivForm {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+ 
+}
+
+
+
+form#GerenciarUserDivForm button {
+  padding: 6px 12px;
+  background-color: #28a745;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+form#GerenciarUserDivForm button:hover {
+  background-color: #218838;
+}
+
+input#nome{
+    width: 100px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+input#permissao{
+    width: 100px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+select#senh{
+    width: 100px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+/* Tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+thead {
+  background-color: #007bff;
+  color: white;
+}
+
+thead th {
+  padding: 12px;
+  text-align: left;
+}
+
+tbody td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  justify-content: center;
+}
+
+/* Linhas alternadas */
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Botões */
+button {
+  margin-right: 6px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+/* Botão Editar */
+button.editar {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+button.editar:hover {
+  background-color: #e0a800;
+}
+
+/* Botão Remover */
+button.remover {
+  background-color: #dc3545;
+  color: white;
+}
+
+button.remover:hover {
+  background-color: #c82333;
+}
+
+/* Botão Salvar */
+button.salvar {
+  background-color: #17a2b8;
+  color: white;
+}
+
+button.salvar:hover {
+  background-color: #138496;
+}
+
+/* Botão Cancelar */
+button.cancelar {
+  background-color: #6c757d;
+  color: white;
+}
+
+button.cancelar:hover {
+  background-color: #5a6268;
+}
+
+
+button.btn_voltar_GerenciarUserDiv{
+  background-color: green;
+  border: 2px solid black;
+  color: white;
+
+}
+
+button.btn_voltar_GerenciarUserDiv:hover{
+  background-color: rgb(132, 255, 132);
+  border: 2px solid black;
+  color: white;
+
+}
+
+
+
+.inputNomeGerenciarUserDivForm{
+  display: flex;
+  flex-direction: column;
+}
+
+.inputSenhaGerenciarUserDivForm{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.nomeVazio{
+  color: red;
+  font-size: small;
+}
+
+
+.senhaVazio{
+  color: red;
+  font-size: small;
+}
+

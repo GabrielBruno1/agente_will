@@ -1,0 +1,81 @@
+services:
+
+      postgres:
+        image: postgres:15
+        container_name: postgres
+        restart: always
+        ports:
+            - "5432:5432"
+
+        command: ["postgres", "-c", "max_connections=200"]
+
+
+        environment:
+            POSTGRES_USER: gabriel
+            POSTGRES_PASSWORD: 123456789
+
+        volumes:
+            - "./back_end/postgres_data:/var/lib/postgresql/data"
+
+        networks:
+           - rede1
+
+      api:
+          build:
+            context: ./back_end
+            dockerfile: DockerFile.api
+
+          container_name: will_app
+          restart: always
+          ports:
+             - "5000:5000"
+          
+          volumes:
+            - "./back_end:/app"
+            - "./back_end/chroma_data:/app/chroma_data"
+
+          depends_on:
+            - postgres
+
+          networks:
+            - rede1
+
+
+      front_end:
+          build:
+            context: ./front_end/vite-project
+            dockerfile: DockerFile.api
+
+          container_name: will_portal
+          restart: always
+          ports:
+            - "5173:5173"
+ 
+
+
+          environment:
+              NODE_ENV: development
+              VITE_API_URL: "http://api:5000" # Ou a URL que você usa no Docker
+              CHOKIDAR_USEPOLLING: true  # garante hot reload dentro do Docker
+
+          volumes:
+              - ./front_end/vite-project:/app          # código local dentro do container
+              - /app/node_modules         # previne conflito do node_modules local
+
+
+          stdin_open: true
+          tty: true
+
+          networks:
+             - rede1
+
+
+
+
+networks:
+  rede1:
+    driver: bridge
+
+volumes:
+   chroma_data:
+   postgres_data:
